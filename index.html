@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Farbwähler</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="picker-app">
+  <p class="app-title">Farbwähler</p>
+
+  <div class="picker-main">
+
+    <div class="canvas-column">
+      <div class="sv-square-wrap" id="svWrap">
+        <canvas id="svCanvas" width="260" height="260"></canvas>
+        <div class="sv-cursor" id="svCursor"></div>
+      </div>
+      <div class="hue-bar-wrap" id="hueWrap">
+        <canvas id="hueCanvas" width="28" height="260"></canvas>
+        <div class="hue-cursor" id="hueCursor"></div>
+      </div>
+    </div>
+
+    <div class="controls-column">
+
+      <div class="preview-row">
+        <div class="preview-swatch" id="previewSwatch"></div>
+        <button class="eyedropper-btn" id="eyedropperBtn" title="Pipette / Farbe von Bildschirm aufnehmen" type="button">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19.5 4.5 L21 6 L18 9 L16.5 7.5 Z"></path>
+            <path d="M16.5 7.5 L7 17 L4 20 L6 17.5 L7 17 L16.5 7.5"></path>
+            <path d="M4 20 L6 20 L6.5 17.5"></path>
+            <path d="M14 9 L16.5 11.5"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="field-group">
+        <div class="field-group-title">
+          <span>Hex</span>
+          <button class="copy-btn" data-copy="hex" type="button">Kopieren</button>
+        </div>
+        <div class="hex-input-wrap">
+          <input type="text" id="hexInput" maxlength="7" spellcheck="false" autocomplete="off" value="#FFFFFF">
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="field-group-title">
+          <span>RGB</span>
+          <button class="copy-btn" data-copy="rgb" type="button">Kopieren</button>
+        </div>
+        <div class="fields-row">
+          <div class="field">
+            <label for="rInput">R</label>
+            <input type="number" id="rInput" min="0" max="255" value="255" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="gInput">G</label>
+            <input type="number" id="gInput" min="0" max="255" value="255" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="bInput">B</label>
+            <input type="number" id="bInput" min="0" max="255" value="255" inputmode="numeric">
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="field-group-title">
+          <span>HSV</span>
+          <button class="copy-btn" data-copy="hsv" type="button">Kopieren</button>
+        </div>
+        <div class="fields-row">
+          <div class="field">
+            <label for="hsvHInput">H</label>
+            <input type="number" id="hsvHInput" min="0" max="360" value="0" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="hsvSInput">S</label>
+            <input type="number" id="hsvSInput" min="0" max="100" value="0" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="hsvVInput">V</label>
+            <input type="number" id="hsvVInput" min="0" max="100" value="100" inputmode="numeric">
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="field-group-title">
+          <span>HSL</span>
+          <button class="copy-btn" data-copy="hsl" type="button">Kopieren</button>
+        </div>
+        <div class="fields-row">
+          <div class="field">
+            <label for="hslHInput">H</label>
+            <input type="number" id="hslHInput" min="0" max="360" value="0" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="hslSInput">S</label>
+            <input type="number" id="hslSInput" min="0" max="100" value="0" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="hslLInput">L</label>
+            <input type="number" id="hslLInput" min="0" max="100" value="100" inputmode="numeric">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
